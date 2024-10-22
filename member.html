@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>團員介紹</title>
+    <style>
+        .member-card img {
+            width: 300px;   /* 固定頭貼寬度 */
+            height: 300px;  /* 固定頭貼高度 */
+            background-color: #eaeaea; /* 增加背景色 */
+            object-fit: cover; /* 確保圖片填滿方形 */
+        }
+
+        .container {
+            margin: 0 auto; /* 置中整個頁面區段 */
+        }
+
+        .member-card {
+            margin: 20px; /* 增加左右側邊距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar"></div> <!-- 這裡的 navbar 將由 JS 加載 -->
+
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-4 mb-4">
+                <div class="member-card d-flex align-items-center bg-light p-3">
+                    <img src="path/to/your/image1.jpg" alt="團員頭貼" class="img-fluid" />
+                    <div class="ms-3 flex-grow-1">
+                        <h5>團員名稱 1</h5>
+                        <p>這是團員 1 的介紹內容，簡要描述其背景和貢獻。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mb-4">
+                <h5>團員 1 的詳細資訊</h5>
+                <p>這是團員 1 的更多介紹，描述其技能、經驗等詳細資料。</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="member-card" data-bs-toggle="modal" data-bs-target="#memberModal1">
+                    <img src="path/to/your/image2.jpg" alt="團員頭貼" class="img-fluid" />
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="member-card" data-bs-toggle="modal" data-bs-target="#memberModal2">
+                    <img src="path/to/your/image3.jpg" alt="團員頭貼" class="img-fluid" />
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="member-card" data-bs-toggle="modal" data-bs-target="#memberModal3">
+                    <img src="path/to/your/image4.jpg" alt="團員頭貼" class="img-fluid" />
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="member-card" data-bs-toggle="modal" data-bs-target="#memberModal4">
+                    <img src="path/to/your/image5.jpg" alt="團員頭貼" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 團員模態框 -->
+    <div class="modal fade" id="memberModal1" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="memberModalLabel">團員名稱 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    這是團員 2 的詳細介紹內容。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="memberModal2" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="memberModalLabel">團員名稱 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    這是團員 3 的詳細介紹內容。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="memberModal3" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="memberModalLabel">團員名稱 4</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    這是團員 4 的詳細介紹內容。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="memberModal4" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="memberModalLabel">團員名稱 5</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    這是團員 5 的詳細介紹內容。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

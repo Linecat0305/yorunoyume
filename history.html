@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夜の夢 - 團隊歷史</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center glow mb-5">夜の夢的歷史軌跡</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="date">2020</div>
+                    <div class="content">
+                        <h2>團隊成立</h2>
+                        <p>首次創團</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="date">2021</div>
+                    <div class="content">
+                        <h2>團聚</h2>
+                        <p>第一次聚會</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="date">2022</div>
+                    <div class="content">
+                        <h2>發行首個作品</h2>
+                        <p>第一個作品</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="date">2023</div>
+                    <div class="content">
+                        <h2>團聚</h2>
+                        <p>第二次團聚</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="date">2024</div>
+                    <div class="content">
+                        <h2>充畫面</h2>
+                        <p>不知道打什麼所以給我去打紋章系</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 加載 navbar.html
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

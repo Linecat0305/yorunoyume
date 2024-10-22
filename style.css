@@ -1,0 +1,263 @@
+body {
+    background: radial-gradient(circle, #000000, #003366);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 固定背景，隨螢幕滾動 */
+    background-size: cover; /* 確保背景覆蓋整個螢幕 */
+    color: #FFFFFF;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand, .nav-link {
+    color: #FFFFFF !important;
+}
+
+.nav-link:hover {
+    color: #0066FF !important;
+}
+
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.glow {
+    text-shadow: 0 0 10px #0066FF, 0 0 20px #0066FF, 0 0 30px #0066FF;
+}
+
+.btn-custom {
+    background-color: #0066FF;
+    border-color: #0066FF;
+    color: #FFFFFF;
+}
+
+.btn-custom:hover {
+    background-color: #0055CC;
+    border-color: #0055CC;
+    color: #FFFFFF;
+}
+
+/* 團隊歷史頁面樣式 */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    padding-bottom: 50px;
+}
+
+.timeline::before {
+    content: '';
+    background: #0066FF;
+    width: 2px;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    transform: 100%;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    bottom: 17%;
+    left: 50.1%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 15px 10px 0 10px;
+    border-color: #0066FF transparent transparent transparent;
+}
+.timeline-item {
+    width: 100%;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+}
+
+.timeline-content {
+    width: 48%;
+    padding: 20px;
+    background: rgb(17,24,39);
+    box-shadow: 0 0 10px #46a3ff;
+    position: relative;
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 50px;
+    right: -13px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent rgb(17,24,39);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -13px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent rgb(17,24,39) transparent transparent;
+}
+
+.timeline-content .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #0066FF;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* 團員介紹樣式 */
+.member-container {
+    padding: 20px;
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.member-header .profile-pic {
+    width: 100px; /* 正方形頭貼 */
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: transform 0.3s; /* 加入動畫 */
+}
+
+.member-header .profile-pic:hover {
+    transform: scale(1.1); /* 當滑鼠移上時的放大效果 */
+}
+
+.member-header .member-info {
+    flex-grow: 1; /* 讓右邊長方形自動延伸 */
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 下方的四個正方形 */
+    gap: 10px;
+}
+
+.member-grid .member-thumbnail {
+    width: 100%; /* 確保正方形縮放 */
+    padding-top: 100%; /* 使用padding-top來保持正方形 */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.member-grid .member-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s; /* 加入動畫 */
+}
+
+.member-grid .member-thumbnail:hover img {
+    transform: scale(1.1); /* 當滑鼠移上時的放大效果 */
+}
+
+/* 彈出式視窗 */
+.modal {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #222;
+    margin: 15% auto; /* 使彈出框在視窗中間 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 設置彈出框的寬度 */
+    animation: fadeIn 0.5s; /* 加入淡入動畫 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 更新的RWD樣式 */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+        height: 90%;  /* 延長藍色線條 */
+    }
+    .timeline::after {
+        bottom: 8%; /* 在小螢幕上確保箭頭顯示在合適位置 */
+        left: 21.09px; /* 保持和手機版藍色線條對齊 */
+        transform: none; /* 移除 translateX 讓箭頭直接與線條左對齊 */
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 45px;
+        margin-bottom: 45px;
+    }
+    .timeline-content {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+    .timeline-content::after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        top: 50px;
+        left: -13px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent rgb(17,24,39) transparent transparent;
+    }
+    .timeline-content .date {
+        position: relative;
+        top: -20px;
+        left: -20px;
+        width: calc(100% + 40px);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* 團員介紹樣式手機版 */
+    .member-header {
+        flex-direction: column; /* 手機版改為垂直排列 */
+        align-items: center;
+    }
+
+    .member-header .profile-pic {
+        margin-bottom: 10px; /* 調整頭貼與標題的間距 */
+    }
+
+    .member-grid {
+        grid-template-columns: repeat(2, 1fr); /* 手機版下方的兩個正方形 */
+    }
+}
+
+/* 桌面版排序調整 */
+@media screen and (min-width: 769px) {
+    .timeline-item {
+        margin-top: -35px;  /* 調整項目位置，使其略微重疊 */
+    }
+    .timeline-item:nth-child(odd) {
+        justify-content: flex-start;
+    }
+    .timeline-item:nth-child(even) {
+        justify-content: flex-end;
+    }
+}
